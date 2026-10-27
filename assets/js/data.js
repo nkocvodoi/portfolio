@@ -87,7 +87,7 @@ window.SITE = {
       slug: 'cocain',
       name: 'Cocain',
       date: '2026-10',
-      url: 'https://cocain.onrender.com/',
+      url: 'https://cocain-394370752419.asia-southeast1.run.app/ho-so',
       image: 'assets/img/cocain.jpg',
       color: '#2f6b57',
       action: { vi: 'Chơi ngay', en: 'Play now', ja: '今すぐ遊ぶ' },

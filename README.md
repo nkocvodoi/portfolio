@@ -4,7 +4,7 @@ Trang cá nhân của Kiên Duy ([@nkocvodoi](https://github.com/nkocvodoi)), gi
 sản phẩm đang chạy thật:
 
 - [Bronze Dawn](https://bronzedawn.pages.dev/): game chiến thuật thời gian thực thời đồ đá, chơi trên trình duyệt
-- [Cocain](https://cocain.onrender.com/): cờ caro, cờ tướng, cờ vây, cờ vua online bằng tiếng Việt
+- [Cocain](https://cocain-394370752419.asia-southeast1.run.app/ho-so): cờ caro, cờ tướng, cờ vây, cờ vua online bằng tiếng Việt
 - [Sòng Phẳng](https://songphang-637431531944.asia-southeast1.run.app/): chia tiền nhóm, ít lần chuyển khoản nhất
 
 Trang chạy tại **https://nkocvodoi.github.io/portfolio/**. Có tiếng Việt (mặc định), English và 日本語,
