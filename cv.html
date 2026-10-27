@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV Nguyễn Duy Kiên</title>
+  <meta name="description" content="Nguyễn Duy Kiên, Fullstack Developer. Web và mobile app, hơn 6 năm kinh nghiệm.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --side: #2f3437;
+      --side-text: #e7e9ea;
+      --side-muted: #b4babd;
+      --accent: #f29b1d;
+      --ink: #1f2427;
+      --muted: #5b6468;
+      --line: #e6e8e9;
+      --chip: #f4f5f5;
+      --page-bg: #d9dcde;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--page-bg);
+      color: var(--ink);
+      font: 13px/1.55 "Be Vietnam Pro", "Noto Sans JP", system-ui, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    ul { margin: 0; padding-left: 1.1em; }
+    li { margin: 0.15em 0; }
+
+    .page {
+      max-width: 210mm;
+      min-height: 297mm;
+      margin: 16px auto 32px;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 68mm 1fr;
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Sidebar */
+    .side {
+      background: var(--side);
+      color: var(--side-text);
+      padding: 26px 22px 30px;
+    }
+    .photo {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+      border-radius: 4px;
+    }
+    .name {
+      margin: 18px 0 2px;
+      font-size: 25px;
+      line-height: 1.2;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .role {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .contact { list-style: none; padding: 0; margin: 18px 0 0; }
+    .contact li {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 8px;
+      margin: 7px 0;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+    .contact svg { width: 14px; height: 14px; margin-top: 2px; fill: var(--accent); }
+    .side h2 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 24px 0 10px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .side h2::after { content: ""; flex: 1; height: 1.5px; background: var(--accent); }
+    .skill { margin: 0 0 10px; }
+    .skill b { display: block; font-size: 11.5px; font-weight: 600; color: #fff; }
+    .skill span { font-size: 12px; color: var(--side-muted); }
+    .side p { margin: 0 0 6px; font-size: 12px; color: var(--side-muted); }
+    .side p b { color: #fff; font-weight: 600; }
+
+    /* Main */
+    .main { padding: 26px 28px 30px; }
+    .main h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 22px 0 10px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .main h2:first-child { margin-top: 0; }
+    .main h2::after { content: ""; flex: 1; height: 1.5px; background: var(--accent); }
+    .summary { margin: 0; }
+
+    .job { margin: 0 0 16px; break-inside: avoid-page; }
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .job-title { margin: 0; font-size: 13.5px; font-weight: 700; text-transform: uppercase; }
+    .date { font-weight: 600; white-space: nowrap; font-size: 12.5px; }
+    .company { margin: 1px 0 6px; font-weight: 600; color: var(--muted); }
+    .note { margin: 0 0 6px; color: var(--muted); font-size: 12.5px; }
+
+    .proj {
+      margin: 8px 0 10px;
+      padding: 8px 10px 8px 12px;
+      border-left: 3px solid var(--accent);
+      background: #fcfcfc;
+      break-inside: avoid;
+    }
+    .proj-head { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+    .proj-name { margin: 0; font-size: 13px; font-weight: 700; }
+    .proj-name a { border-bottom: 1px solid var(--line); }
+    .proj-kind { font-size: 11.5px; color: var(--muted); white-space: nowrap; }
+    .proj p { margin: 3px 0 4px; }
+    .proj p.meta { margin: 0 0 2px; font-size: 11.5px; color: var(--muted); }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+    .chips span {
+      font-size: 11px;
+      padding: 1px 7px;
+      border-radius: 10px;
+      background: var(--chip);
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .label { margin: 6px 0 2px; font-weight: 600; font-size: 12.5px; }
+
+    @media screen and (max-width: 760px) {
+      .page { grid-template-columns: 1fr; margin: 0 0 24px; min-height: 0; }
+      .side, .main { padding: 22px 16px; }
+      .photo { width: 140px; }
+      .job-head, .proj-head { flex-direction: column; gap: 0; }
+    }
+
+    @page { size: A4; margin: 0; }
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; box-shadow: none; max-width: none; min-height: 297mm; }
+      .job { break-inside: auto; }
+      .side, .proj { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+  <article class="page">
+
+    <aside class="side">
+      <img class="photo" src="assets/img/cv-photo.jpg" alt="Ảnh Nguyễn Duy Kiên">
+      <h1 class="name">Nguyễn Duy Kiên</h1>
+      <p class="role">Fullstack Developer</p>
+
+      <ul class="contact">
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          <a href="tel:+84398567928">0398 567 928</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <a href="mailto:nguyenduykien.works@gmail.com">nguyenduykien.works@<wbr>gmail.com</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.3 18.3V10H5.7v8.3h2.6zM7 8.8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm11.3 9.5v-4.6c0-2.4-1.3-3.6-3.1-3.6-1.4 0-2.1.8-2.4 1.3V10h-2.6v8.3h2.6v-4.1c0-1.1.2-2.1 1.5-2.1s1.4 1.2 1.4 2.2v4h2.6z"/></svg>
+          <a href="https://www.linkedin.com/in/ki%C3%AAn-nguy%E1%BB%85n-770b4b285/">linkedin.com/in/kiên-nguyễn-770b4b285</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 2.9.8.1-.6.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .6 1.4.2 2.4.1 2.7.7.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>
+          <a href="https://github.com/nkocvodoi">github.com/nkocvodoi</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-3a15.7 15.7 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8zM12 4c.8 1.2 1.5 2.5 1.9 4h-3.8c.4-1.4 1.1-2.8 1.9-4zM4.3 14a8.2 8.2 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4H4.3zm.8 2h3a15.7 15.7 0 0 0 1.4 3.6A8 8 0 0 1 5.1 16zm3-8h-3a8 8 0 0 1 4.3-3.6C8.9 5.5 8.4 6.7 8.1 8zM12 20c-.8-1.2-1.5-2.5-1.9-4h3.8c-.4 1.4-1.1 2.8-1.9 4zm2.3-6H9.7a14.7 14.7 0 0 1 0-4h4.6a14.7 14.7 0 0 1 0 4zm.3 5.6c.6-1.1 1.1-2.3 1.4-3.6h3a8 8 0 0 1-4.4 3.6zm1.7-5.6a16.5 16.5 0 0 0 0-4h3.4a8.2 8.2 0 0 1 0 4h-3.4z"/></svg>
+          <a href="https://nkocvodoi.github.io/portfolio/">nkocvodoi.github.io/portfolio</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+          <span>Xuân Đỉnh, Bắc Từ Liêm, Hà Nội</span>
+        </li>
+      </ul>
+
+      <h2>Kỹ năng</h2>
+      <div class="skill"><b>Ngôn ngữ lập trình</b><span>TypeScript, JavaScript, Go, Dart, Python, Swift, SQL</span></div>
+      <div class="skill"><b>Frontend</b><span>Next.js, React, Vue.js, HTML/CSS</span></div>
+      <div class="skill"><b>Mobile</b><span>Flutter, Firebase, Swift (iOS / macOS)</span></div>
+      <div class="skill"><b>Backend</b><span>NestJS, Go, Node.js, FastAPI, RESTful API, Socket.IO</span></div>
+      <div class="skill"><b>Cơ sở dữ liệu</b><span>PostgreSQL, MySQL, Elasticsearch, Drizzle ORM</span></div>
+      <div class="skill"><b>Cloud &amp; triển khai</b><span>AWS (S3, CloudFront, OpenSearch, Bedrock, CodePipeline…), Docker, GitHub Actions, CI/CD, Google Cloud Run</span></div>
+      <div class="skill"><b>Kiểm thử</b><span>Playwright, Vitest, Cypress, Flutter test</span></div>
+
+      <h2>Ngoại ngữ</h2>
+      <p><b>Tiếng Anh:</b> APTIS C1 (2026)</p>
+      <p><b>Tiếng Nhật:</b> JLPT N3 (2023)</p>
+
+      <h2>Sở thích</h2>
+      <p>Bóng rổ, cà phê, du lịch.</p>
+    </aside>
+
+    <main class="main">
+      <h2>Giới thiệu</h2>
+      <p class="summary">
+        Fullstack Developer với hơn 6 năm kinh nghiệm làm web và ứng dụng di động, từ giao diện, API, cơ sở dữ liệu
+        đến kiểm thử và phát hành.
+        Từ 04/2023 làm tại GMO Financial System, phát triển các sản phẩm tài chính và đời sống cho người dùng Nhật Bản
+        trên cả web và mobile app.
+        Quen làm việc với khách hàng Nhật Bản; tiếng Anh APTIS C1, tiếng Nhật N3.
+        Mục tiêu: phát triển và quản lý những ứng dụng hữu ích cho thị trường Việt Nam, đưa sản phẩm từ con số 0
+        lên hàng triệu người dùng.
+      </p>
+
+      <h2>Kinh nghiệm làm việc</h2>
+
+      <section class="job">
+        <div class="job-head">
+          <h3 class="job-title">Fullstack Developer</h3>
+          <span class="date">04/2023 – Hiện tại</span>
+        </div>
+        <p class="company">GMO-Z.com Financial System VN (GMO Financial System)</p>
+        <p class="note">Công ty con của GMO Financial Holdings (niêm yết tại Sở GDCK Tokyo), phát triển hệ thống cho các dịch vụ của tập đoàn tại Nhật Bản.</p>
+
+        <div class="proj">
+          <div class="proj-head">
+            <h4 class="proj-name"><a href="https://gmo-clinic-map.com/">GMO Clinic Map</a></h4>
+            <span class="proj-kind">Web + Mobile app</span>
+          </div>
+          <p>
+            Nền tảng y tế trực tuyến kết nối bệnh nhân với phòng khám và bệnh viện: tìm kiếm cơ sở khám chữa bệnh,
+            đặt lịch khám online và đặt mua thuốc theo đơn bác sĩ kê.
+          </p>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head">
+            <h4 class="proj-name"><a href="https://apps.apple.com/jp/app/%E5%AE%B6%E8%A8%88%E3%83%9C%E3%83%BC%E3%83%89-bygmo/id6771291118">家計ボード byGMO (Kakeibo Board)</a></h4>
+            <span class="proj-kind">iOS app · GMO One Account</span>
+          </div>
+          <p>
+            Ứng dụng quản lý chi tiêu gia đình: tự động liên kết tài khoản ngân hàng, thẻ tín dụng, chứng khoán và ví điện tử;
+            biểu đồ theo danh mục, báo cáo hàng tháng, quản lý ngân sách và chia sẻ sổ chi tiêu với vợ/chồng.
+          </p>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head">
+            <h4 class="proj-name"><a href="https://1-account.com/life/energy/">1アカウント でんき＆ガス</a></h4>
+            <span class="proj-kind">Web</span>
+          </div>
+          <p>
+            Dịch vụ điện và gas của 1アカウント: gói điện giá theo thị trường, tích điểm 1–1,5% trên hóa đơn,
+            đăng ký trực tuyến.
+          </p>
+        </div>
+
+        <p class="label">Công việc chính:</p>
+        <ul>
+          <li>Phát triển web bằng Next.js, backend bằng NestJS và Go với PostgreSQL.</li>
+          <li>Triển khai và vận hành trên AWS: S3, CloudFront, OpenSearch, Bedrock, CodePipeline và các dịch vụ khác.</li>
+          <li>Phát triển mobile app bằng Flutter cho iOS và Android.</li>
+          <li>Đọc và phân tích spec tiếng Nhật, estimate, coding, viết unit test, review code.</li>
+          <li>Phối hợp với BrSE và đội phía Nhật để làm rõ yêu cầu, xử lý lỗi và phát hành.</li>
+        </ul>
+        <div class="chips"><span>Next.js</span><span>NestJS</span><span>Go</span><span>PostgreSQL</span><span>Flutter</span><span>AWS S3</span><span>CloudFront</span><span>OpenSearch</span><span>Bedrock</span><span>CodePipeline</span></div>
+      </section>
+
+      <section class="job">
+        <div class="job-head">
+          <h3 class="job-title">Flutter Developer</h3>
+          <span class="date">07/2022 – 04/2023</span>
+        </div>
+        <p class="company">Công ty Cổ phần Công nghệ TEKO Việt Nam</p>
+
+        <div class="proj">
+          <div class="proj-head">
+            <h4 class="proj-name">POS365</h4>
+            <span class="proj-kind">Web + Mobile app · nhóm 12 người</span>
+          </div>
+          <p>Phần mềm quản lý bán hàng cho cửa hàng bán lẻ, nhà hàng, quán cà phê, karaoke.</p>
+        </div>
+        <ul>
+          <li>Phát triển phiên bản mới của POS365 trên web và mobile bằng Flutter, tích hợp backend qua RESTful API.</li>
+          <li>Viết unit test, widget test và integration test; đưa kiểm thử tự động vào quy trình theo dõi trên Jira.</li>
+          <li>Estimate task, coding, UT; review code cùng nhóm; tối ưu hiệu năng trên nhiều nền tảng.</li>
+          <li>Nghiên cứu giải pháp kỹ thuật theo yêu cầu khách hàng; phiên bản mới nhận phản hồi tích cực từ người dùng.</li>
+        </ul>
+        <div class="chips"><span>Flutter</span><span>Dart</span><span>RESTful API</span><span>integration_test</span><span>Jira</span></div>
+      </section>
+
+      <section class="job">
+        <div class="job-head">
+          <h3 class="job-title">Full-stack Developer</h3>
+          <span class="date">02/2020 – 02/2022</span>
+        </div>
+        <p class="company">Công ty TNHH Sao Khuê</p>
+        <ul>
+          <li>Phát triển ứng dụng giáo dục cho Android và iOS; góp phần ra mắt 3 trong 4 ứng dụng của công ty trên App Store và Google Play, đạt hàng nghìn lượt tải.</li>
+          <li>Làm các dự án outsourcing cho khách hàng Nhật Bản, giao đúng tiến độ và được đánh giá tốt về chất lượng.</li>
+          <li>Tham gia tư vấn, thiết kế giải pháp; estimate, coding, UT; áp dụng CI/CD; review code và chia sẻ kiến thức trong nhóm.</li>
+        </ul>
+
+        <div class="proj">
+          <div class="proj-head">
+            <h4 class="proj-name">HR Dashboard Manager</h4>
+            <span class="proj-kind">04/2021 – 03/2022</span>
+          </div>
+          <p class="meta">Khách hàng Nhật Bản XAIONDATA Inc. (outsource) · Fullstack Developer · nhóm 3 người</p>
+          <p>Hệ thống giúp phòng nhân sự tìm và kết nối ứng viên tiềm năng nhanh hơn: tìm kiếm ứng viên, tự động gửi tin nhắn cho nhiều ứng viên cùng lúc.</p>
+          <ul>
+            <li>Xây dựng giao diện bằng Vue.js, API bằng FastAPI; thiết kế và tối ưu truy vấn MySQL.</li>
+            <li>Dùng Elasticsearch để tìm kiếm và phân tích dữ liệu ứng viên.</li>
+            <li>Kiểm thử end-to-end bằng Cypress; tự động thu thập dữ liệu web bằng Selenium.</li>
+          </ul>
+          <div class="chips"><span>Vue.js</span><span>FastAPI</span><span>MySQL</span><span>Elasticsearch</span><span>Cypress</span><span>Selenium</span></div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head">
+            <h4 class="proj-name">Lingobee</h4>
+            <span class="proj-kind">03/2021 – 02/2022</span>
+          </div>
+          <p class="meta">Sản phẩm của Sao Khuê · Frontend Developer (mobile) · nhóm 6 người</p>
+          <p>Ứng dụng học và luyện tiếng Anh cho học sinh theo giáo trình mới của Bộ Giáo dục và Đào tạo, kèm các trò chơi giúp học dễ và vui hơn.</p>
+          <div class="chips"><span>Flutter 2</span><span>Firebase</span></div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head">
+            <h4 class="proj-name">Golf IM</h4>
+            <span class="proj-kind">09/2020 – 03/2021</span>
+          </div>
+          <p class="meta">Sản phẩm của Sao Khuê · Frontend Developer (mobile) · nhóm 5 người</p>
+          <p>Ứng dụng đặt sân golf, kèm quản lý sân, bảng tin và cửa hàng.</p>
+          <div class="chips"><span>Flutter</span><span>Firebase</span></div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head">
+            <h4 class="proj-name">SMSong</h4>
+            <span class="proj-kind">06/2020 – 08/2020</span>
+          </div>
+          <p class="meta">Sản phẩm của Sao Khuê · Frontend Developer (mobile) · nhóm 3 người</p>
+          <p>Ứng dụng giúp trẻ mẫu giáo làm quen với tiếng Anh qua bài hát và trò chơi.</p>
+          <div class="chips"><span>Flutter</span><span>Firebase</span></div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head">
+            <h4 class="proj-name">HTCon</h4>
+            <span class="proj-kind">02/2020 – 06/2020</span>
+          </div>
+          <p class="meta">Khách hàng: Trung tâm gia sư Bình Minh · Frontend Developer (mobile) · nhóm 3 người</p>
+          <p>Ứng dụng kết nối gia sư và học viên: tìm kiếm gia sư / học viên, quản lý lớp học, gia sư và học viên.</p>
+          <div class="chips"><span>Flutter</span><span>Firebase</span></div>
+        </div>
+        <p class="note">Ở các dự án mobile: phát triển tính năng, review và tối ưu code, sửa lỗi.</p>
+      </section>
+
+      <h2>Dự án cá nhân</h2>
+
+      <div class="proj">
+        <div class="proj-head">
+          <h4 class="proj-name"><a href="https://bronzedawn.pages.dev/">Bronze Dawn</a></h4>
+          <span class="proj-kind">2026 · bronzedawn.pages.dev</span>
+        </div>
+        <p>Game chiến thuật thời gian thực chạy trên trình duyệt: 4 thời đại, 33 loại quân, AI 5 mức, chơi online ngang hàng; có bản macOS viết bằng Swift.</p>
+        <div class="chips"><span>TypeScript</span><span>PixiJS</span><span>PeerJS</span><span>Swift</span><span>Playwright</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="proj-head">
+          <h4 class="proj-name"><a href="https://cocain.onrender.com/">Cocain</a></h4>
+          <span class="proj-kind">2026 · cocain.onrender.com</span>
+        </div>
+        <p>Chơi cờ caro, cờ tướng, cờ vây, cờ vua online: xếp hạng Elo, phòng riêng, AI 5 mức (cờ vây dùng Monte Carlo tree search), xem lại ván.</p>
+        <div class="chips"><span>Next.js</span><span>Socket.IO</span><span>PostgreSQL</span><span>Drizzle</span><span>Playwright</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="proj-head">
+          <h4 class="proj-name"><a href="https://songphang-637431531944.asia-southeast1.run.app/">Sòng Phẳng</a></h4>
+          <span class="proj-kind">2026 · PWA</span>
+        </div>
+        <p>Chia tiền nhóm: tính ai nợ ai với ít lần chuyển khoản nhất, mã VietQR, thông báo đẩy, cài được như app.</p>
+        <div class="chips"><span>Next.js</span><span>PostgreSQL</span><span>Web Push</span><span>Google Cloud Run</span></div>
+      </div>
+
+      <h2>Học vấn</h2>
+      <section class="job">
+        <div class="job-head">
+          <h3 class="job-title">Thạc sĩ Hệ thống thông tin</h3>
+          <span class="date">10/2024 – 12/2026</span>
+        </div>
+        <p class="company">Trường Đại học Công nghệ, Đại học Quốc gia Hà Nội</p>
+      </section>
+      <section class="job">
+        <div class="job-head">
+          <h3 class="job-title">Công nghệ thông tin định hướng thị trường Nhật Bản</h3>
+          <span class="date">10/2018 – 03/2023</span>
+        </div>
+        <p class="company">Trường Đại học Công nghệ, Đại học Quốc gia Hà Nội · GPA 3.02/4</p>
+      </section>
+
+      <h2>Giải thưởng</h2>
+      <section class="job">
+        <div class="job-head">
+          <h3 class="job-title">Giải Ba, Cuộc thi Khoa học Kỹ thuật cấp Quốc gia</h3>
+          <span class="date">09/2017</span>
+        </div>
+      </section>
+    </main>
+
+  </article>
+</body>
+</html>

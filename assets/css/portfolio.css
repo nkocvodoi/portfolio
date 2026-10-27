@@ -139,6 +139,8 @@ img { max-width: 100%; display: block; }
   transition: background .15s ease, transform .15s ease;
 }
 .btn:hover { background: var(--accent-hover); transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 2px var(--accent); }
+.btn-ghost:hover { background: var(--chip); }
 
 .chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
 .chips li { background: var(--chip); border-radius: .4rem; padding: .2rem .65rem; font-size: .82rem; font-weight: 500; }
