@@ -18,9 +18,9 @@ window.SITE = {
       ja: 'ここにあるものは全部動いています',
     },
     quote: {
-      vi: 'Một tính năng chạy được hơn mười tính năng trên giấy.',
-      en: 'One feature that runs beats ten on paper.',
-      ja: '動くひとつの機能は、紙の上の十の機能に勝る。',
+      vi: 'Phát hành sớm, lắng nghe kỹ, làm tốt hơn mỗi ngày.',
+      en: 'Ship early, listen closely, get better every day.',
+      ja: '早く出して、よく聞いて、毎日少しずつ良くする。',
     },
     bio: {
       vi: [
