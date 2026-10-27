@@ -1,0 +1,26 @@
+feature,area,priority,original,clone,notes
+Header with logo + name + nav,shell,must,yes,yes,
+Sticky header + phone menu,shell,must,yes,yes,
+Dark / light toggle remembered,shell,must,yes,yes,no flash on load
+Language switch VI / EN / JA,shell,must,no,yes,new: owner wants three languages
+Hero: role label + big greeting,home,must,yes,yes,
+Tagline with quote marks and // comment,home,should,yes,yes,own words
+Two code-style buttons,home,must,yes,yes,viewPortfolio() + sayHi()
+Round avatar with decorations,home,should,yes,yes,SVG monogram until a photo is added
+List under the hero,home,must,yes,yes,projects instead of posts; each opens the live site
+Tags on each row,home,should,yes,yes,tech stack
+Projects grid with 16:9 images,projects,must,yes,yes,
+About page with profile card,about,should,yes,yes,
+Footer icons + copyright + quote,shell,must,yes,yes,
+404 page,shell,should,yes,yes,
+Portfolio hero with photo + current stack list,portfolio,must,yes,yes,
+Featured project rows alternating sides,portfolio,must,yes,yes,
+Tech chips + Live demo button,portfolio,must,yes,yes,
+Other projects grid,portfolio,could,yes,no,left out: no other public repos confirmed as the owner's own work
+Skills groups,portfolio,should,yes,yes,from evidence in the owner's repos
+Education / experience timeline,portfolio,could,yes,no,left out: waiting on facts from the owner
+Contact section,portfolio,must,yes,yes,
+Scroll reveal animation,portfolio,could,yes,yes,respects reduced motion
+Blog posts / tags / search,blog,skip,yes,no,no posts yet
+Newsletter subscribe,blog,skip,yes,no,no list
+Résumé download,portfolio,skip,yes,no,needs the owner's CV
