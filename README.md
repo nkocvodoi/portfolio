@@ -37,6 +37,15 @@ Chỉ có tiếng Việt cũng được: thiếu bản dịch thì trang tự d�
 Ảnh đại diện hiện là chữ "KD" (`assets/img/avatar.svg`). Muốn dùng ảnh thật thì bỏ ảnh vào
 `assets/img/avatar.jpg` và đổi `avatar.svg` thành `avatar.jpg` trong `index.html` và `about.html`.
 
+## CV
+
+`cv.html` là CV in được khổ A4, có tiếng Việt, English và 日本語 (mỗi thứ tiếng một khối `<article>`).
+Nút tải về trỏ tới các file PDF trong `assets/cv/`. Sửa `cv.html` xong thì tạo lại PDF (cần Google Chrome):
+
+```bash
+sh scripts/build-cv-pdf.sh
+```
+
 ## Chạy thử trên máy
 
 Không cần cài gì, không có bước build:
