@@ -1,11 +1,12 @@
 # Kiên Duy: trang cá nhân + portfolio
 
-Trang cá nhân của Kiên Duy ([@nkocvodoi](https://github.com/nkocvodoi)), giới thiệu ba
-sản phẩm đang chạy thật:
+Trang cá nhân của Kiên Duy ([@nkocvodoi](https://github.com/nkocvodoi)), giới thiệu các dự án cá nhân:
 
 - [Bronze Dawn](https://bronzedawn.pages.dev/): game chiến thuật thời gian thực thời đồ đá, chơi trên trình duyệt
 - [Cocain](https://cocain-394370752419.asia-southeast1.run.app/ho-so): cờ caro, cờ tướng, cờ vây, cờ vua online bằng tiếng Việt
 - [Sòng Phẳng](https://songphang-637431531944.asia-southeast1.run.app/): chia tiền nhóm, ít lần chuyển khoản nhất
+- [SystemDesign](https://nkocvodoi.github.io/SystemDesign/): lộ trình 28 bài học System Design
+- SwipeDelete: app dọn ảnh iPhone, chưa lên App Store (dự án không có `url` thì trang hiện `status` thay cho link)
 
 Trang chạy tại **https://nkocvodoi.github.io/portfolio/**. Có tiếng Việt (mặc định), English và 日本語,
 giao diện sáng và tối.

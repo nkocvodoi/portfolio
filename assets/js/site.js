@@ -48,6 +48,13 @@
   const external = (href, label, cls) =>
     el('a', { href, class: cls, target: '_blank', rel: 'noopener' }, label, el('span', { class: 'sr-only' }, ' ' + t('ui.newTab')));
 
+  // A project without a public link (an app not in a store yet) shows its
+  // name as plain text and its status where the "open" link would be.
+  const projName = (p) => (p.url ? external(p.url, p.name) : p.name);
+  const projOpen = (p) => (p.url ? external(p.url, t('home.open'), 'more') : el('span', { class: 'status-note' }, L(p.status)));
+  const shot = (p, attrs, img) =>
+    el(p.url ? 'a' : 'div', p.url ? { href: p.url, target: '_blank', rel: 'noopener', tabindex: '-1', 'aria-hidden': 'true', ...attrs } : { 'aria-hidden': 'true', ...attrs }, img);
+
   // ---- static text -------------------------------------------------------
 
   function applyStrings() {
@@ -85,23 +92,23 @@
             el('dl', {}, el('dt', { class: 'sr-only' }, t('home.built')),
               el('dd', { class: 'row-date' }, el('time', { datetime: p.date }, monthYear(p.date)))),
             el('div', { class: 'row-body' },
-              el('h3', { class: 'row-title' }, external(p.url, p.name)),
+              el('h3', { class: 'row-title' }, projName(p)),
               tags(p.stack),
               el('p', { class: 'row-text' }, L(p.summary)),
-              external(p.url, t('home.open'), 'more'))))));
+              projOpen(p))))));
     },
 
     // Projects page: cards with a 16:9 screenshot.
     'project-cards'(box) {
       box.replaceChildren(...SITE.projects.map((p) =>
         el('li', { class: 'card' },
-          el('a', { href: p.url, target: '_blank', rel: 'noopener', class: 'card-img', tabindex: '-1', 'aria-hidden': 'true' },
+          shot(p, { class: 'card-img' },
             el('img', { src: p.image, alt: '', loading: 'lazy', width: '1280', height: '800' })),
           el('div', { class: 'card-body' },
-            el('h2', { class: 'card-title' }, external(p.url, p.name)),
+            el('h2', { class: 'card-title' }, projName(p)),
             el('p', { class: 'card-text' }, L(p.summary)),
             tags(p.stack),
-            external(p.url, t('home.open'), 'more')))));
+            projOpen(p)))));
     },
 
     bio(box) {
@@ -117,15 +124,15 @@
       box.replaceChildren(...SITE.projects.map((p) =>
         el('article', { class: 'proj', 'data-reveal': true },
           el('div', { class: 'proj-text' },
-            el('h3', { class: 'proj-title' }, external(p.url, p.name)),
-            el('p', { class: 'proj-meta' }, monthYear(p.date) + ' · ' + t('pf.personal')),
+            el('h3', { class: 'proj-title' }, projName(p)),
+            el('p', { class: 'proj-meta' }, [monthYear(p.date), t('pf.personal'), p.status && L(p.status)].filter(Boolean).join(' · ')),
             el('p', {}, L(p.summary)),
             el('ul', { class: 'proj-points' }, L(p.points).map((x) => el('li', {}, x))),
             tags(p.stack, 'chips'),
-            el('a', { href: p.url, target: '_blank', rel: 'noopener', class: 'btn' },
+            p.url && el('a', { href: p.url, target: '_blank', rel: 'noopener', class: 'btn' },
               el('span', { class: 'icon', html: ICONS.link, 'aria-hidden': 'true' }), L(p.action),
               el('span', { class: 'sr-only' }, ' — ' + p.name + ' ' + t('ui.newTab')))),
-          el('a', { href: p.url, target: '_blank', rel: 'noopener', class: 'proj-shot', style: '--shot:' + p.color, tabindex: '-1', 'aria-hidden': 'true' },
+          shot(p, { class: 'proj-shot', style: '--shot:' + p.color },
             el('img', { src: p.image, alt: t('pf.shot', { project: p.name }), loading: 'lazy', width: '1280', height: '800' })))));
       reveal(box);
     },

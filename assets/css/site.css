@@ -172,6 +172,7 @@ h1, h2, h3 { line-height: 1.15; letter-spacing: -0.02em; }
 .tags li { color: var(--accent); font-size: .8rem; font-weight: 500; text-transform: uppercase; letter-spacing: .02em; }
 .more { color: var(--accent); font-weight: 500; }
 .more:hover { color: var(--accent-hover); }
+.status-note { color: var(--muted); font-weight: 500; }
 .all { display: flex; justify-content: flex-end; padding: 1.5rem 0 0; }
 
 /* ---- project cards ---- */
